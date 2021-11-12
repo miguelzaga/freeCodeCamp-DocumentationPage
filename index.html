@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Technical Documentation</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>
+        <h1>CSS Documentation</h1>
+
+        </header>
+        <ul>
+            <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+            <li><a class="nav-link" href="#Prerequisites">Prerequisites</a></li>
+            <li><a class="nav-link" href="#CSS_syntax">CSS syntax</a></li>
+            <li><a class="nav-link" href="#Adding_CSS_to_our_document">Adding CSS to our document</a></li>
+            <li><a class="nav-link" href="#Styling_HTML_elements">Styling HTML elements</a></li>
+            <li><a class="nav-link" href="#Changing_the_default_behavior_of_elements">
+                    Changing the default behavior of elements</a></li>
+            <li><a class="nav-link" href="#Reference">Reference</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>
+                <h2>Introduction</h2>
+            </header>
+            <p>Cascading Stylesheets — or CSS — is the first technology you should start learning after HTML. While HTML
+                is used to define the structure and semantics of your content, CSS is used to style it and lay it out.
+                For example, you can use CSS to alter the font, color, size, and spacing of your content, split it into
+                multiple columns, or add animations and other decorative features.</p>
+        </section>
+        <section class="main-section" id="Prerequisites">
+            <header>
+                <h2>Prerequisites</h2>
+            </header>
+            <p>
+                You should learn the basics of HTML before attempting any CSS. We recommend that you work through our
+                Introduction to HTML module first.
+            </p>
+            <p>
+                Once you understand the fundamentals of HTML, we recommend that you learn further HTML and CSS at the
+                same time, moving back and forth between the two topics. This is because HTML is far more interesting
+                and much more fun to learn when you apply CSS, and you can't really learn CSS without knowing HTML.
+            </p>
+            <p>Before starting in this topic you should also:</p>
+            <ul>
+                <li>Be familiar with using computers and</li>
+                <li>Using the web passively</li>
+                <li>Have a basic work environment set up</li>
+                <li>Understand how to create and manage files</li>
+                <li>Check <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web">Getting started with the Web</a></li>
+            </ul>
+        </section>
+        <section class="main-section" id="CSS_syntax">
+            <header>
+                <h2>CSS syntax</h2>
+            </header>
+            <p>
+                CSS is a rule-based language — you define rules specifying groups of styles that should be applied to
+                particular elements or groups of elements on your web page. For example "I want the main heading on my
+                page to be shown as large red text."
+            </p>
+            <p>
+                The following code shows a very simple CSS rule that would achieve the styling described above:
+            </p>
+            <p class="p-code">
+                <code>
+                    h1 { <br>
+                        <span class="code-indented">color: red; <br> </span>
+                        <span class="code-indented">font-size: 5em; <br> </span>                        
+                    }
+                </code>
+            </p>
+            <p>
+                The rule opens with a selector . This selects the HTML element that we are going to style. In this case
+                we are styling level one headings.
+            </p>
+            <p>
+                We then have a set of curly braces { }. Inside those will be one or more declarations, which take the
+                form of property and value pairs. Each pair specifies a property of the element(s) we are selecting,
+                then a value that we'd like to give the property.
+            </p>
+            <p>
+                Before the colon, we have the property, and after the colon, the value. CSS properties have different
+                allowable values, depending on which property is being specified. In our example, we have the color
+                property, which can take various color values. We also have the font-size property. This property can
+                take various size units as a value.
+            </p>
+            <p class="p-code">
+                <code>
+                    h1 { <br>
+                        <span class="code-indented">color: red; <br></span>
+                        <span class="code-indented">font-size: 5em; <br></span>
+                    } <br>
+                    <br>
+                    p { <br>
+                        <span class="code-indented">color: black; <br></span>
+                        
+                    }
+                </code>
+            </p>
+
+        </section>
+        <section class="main-section" id="Adding_CSS_to_our_document">
+            <header>
+                <h2>Adding CSS to our document</h2>
+            </header>
+            <p>
+                The very first thing we need to do is to tell the HTML document that we have some CSS rules we want it
+                to use. There are three different ways to apply CSS to an HTML document that you'll commonly come
+                across, however, for now, we will look at the most usual and useful way of doing so — linking CSS from
+                the head of your document.
+            </p>
+            <p>
+                Create a file in the same folder as your HTML document and save it as styles.css. The .css extension
+                shows that this is a CSS file
+            </p>
+
+            <p>
+                To link styles.css to index.html add the following line somewhere inside the &lt;head&gt; of the HTML
+                document:
+            </p>
+
+            <p class="p-code">
+                <code>
+                    &lt;link rel="stylesheet" href="styles.css"&gt;
+                </code>
+            </p>
+        </section>
+        <section class="main-section" id="Styling_HTML_elements">
+            <header>
+                <h2>Styling HTML elements</h2>
+            </header>
+
+            <p>
+                By making our heading red we have already demonstrated that we can target and style an HTML element. We
+                do this by targeting an element selector — this is a selector that directly matches an HTML element
+                name. To target all paragraphs in the document you would use the selector p. To turn all paragraphs
+                green you would use:
+            </p>
+
+            <p class="p-code">
+                <code>
+                    p { <br>
+                    <span class="code-indented">color: green; <br></span>
+                    }
+                </code>
+            </p>
+
+            <p>
+                You can target multiple selectors at once, by separating the selectors with a comma. If I want all
+                paragraphs and all list items to be green my rule looks like this:
+            </p>
+
+            <p class="p-code">
+                <code>
+                    p, li { <br>
+                    <span class="code-indented">color: green; <br></span>
+                    }
+                </code>
+            </p>
+
+
+        </section>
+        <section class="main-section" id="Changing_the_default_behavior_of_elements">
+            <header>
+                <h2>Changing the default behavior of elements</h2>
+            </header>
+
+            <p>
+                When we look at a well-marked up HTML document, even something as simple as our example, we can see how
+                the browser is making the HTML readable by adding some default styling. Headings are large and bold and
+                our list has bullets. This happens because browsers have internal stylesheets containing default styles,
+                which they apply to all pages by default; without them all of the text would run together in a clump and
+                we would have to style everything from scratch. All modern browsers display HTML content by default in
+                pretty much the same way.
+            </p>
+
+            <p>
+                However, you will often want something other than the choice the browser has made. This can be done by
+                choosing the HTML element that you want to change, and using a CSS rule to change the way it looks. A
+                good example is our &lt;ul&gt;, an unordered list. It has list bullets, and if I decide I don't want
+                those bullets I can remove them like so:
+            </p>
+
+            <p class="p-code">
+                <code>
+                    li { <br>
+                    <span class="code-indented">list-style-type: none; <br></span>
+                    }
+                </code>
+            </p>
+
+        </section>
+        <section class="main-section" id="Reference">
+            <header>
+                <h2>Reference</h2>
+            </header>
+            <ul>
+                <li>All the documentation in this page is taken from <a
+                        href="https://developer.mozilla.org/en-US/docs/Learn/CSS">MDN</a></li>
+            </ul>
+
+        </section>
+    </main>
+</body>
+
+</html>
